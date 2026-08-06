@@ -3,558 +3,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>بنیاد خیریه امید نو | Omid-e-No Charity Foundation</title>
-    <!-- Bootstrap 5 RTL -->
+    <title>بنیاد خیریه امید نو</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & BASE ===== */
-        * { font-family: 'Vazirmatn', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        * { font-family: 'Vazirmatn', sans-serif; }
         body { background: #f0f6fe; color: #1a2634; }
-        a { text-decoration: none; }
-        
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #e9eef3; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #0a58ca, #e74c3c); border-radius: 10px; }
-
-        /* ===== NAVBAR ===== */
-        .navbar {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
-            padding: 12px 0;
-            transition: 0.3s;
-        }
-        .navbar-brand {
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: #0a58ca;
-        }
+        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,0.08); padding: 12px 0; }
+        .navbar-brand { font-weight: 900; font-size: 1.5rem; color: #0a58ca; }
         .navbar-brand i { color: #e74c3c; }
-        .nav-link {
-            font-weight: 600;
-            color: #1a2634 !important;
-            margin: 0 10px;
-            transition: 0.3s;
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #0a58ca, #e74c3c);
-            transition: 0.3s;
-            border-radius: 4px;
-        }
+        .nav-link { font-weight: 600; color: #1a2634 !important; margin: 0 10px; transition: 0.3s; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; right: 0; width: 0; height: 3px; background: linear-gradient(90deg, #0a58ca, #e74c3c); transition: 0.3s; border-radius: 4px; }
         .nav-link:hover::after { width: 100%; }
         .nav-link:hover { color: #0a58ca !important; }
-        
-        /* ===== BUTTONS ===== */
-        .btn-primary {
-            background: linear-gradient(135deg, #0a58ca, #084298);
-            border: none;
-            padding: 10px 32px;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(10,88,202,0.35);
-        }
-        .btn-success {
-            background: linear-gradient(135deg, #27ae60, #1e8449);
-            border: none;
-            font-weight: 700;
-            border-radius: 50px;
-            padding: 10px 28px;
-            transition: 0.3s;
-        }
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(39,174,96,0.35);
-        }
+        .btn-primary { background: linear-gradient(135deg, #0a58ca, #084298); border: none; padding: 10px 32px; font-weight: 700; border-radius: 50px; transition: 0.3s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(10,88,202,0.35); }
+        .btn-success { background: linear-gradient(135deg, #27ae60, #1e8449); border: none; font-weight: 700; border-radius: 50px; padding: 10px 28px; transition: 0.3s; }
+        .btn-success:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(39,174,96,0.35); }
         .btn-danger { border-radius: 50px; font-weight: 600; }
-        .btn-warning { border-radius: 50px; font-weight: 600; color: #1a2634; }
-
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(135deg, #e6f0fa 0%, #d4e4f7 50%, #ffffff 100%);
-            padding: 100px 0 70px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(10,88,202,0.06) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero h1 {
-            font-weight: 900;
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #0a58ca, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .hero { background: linear-gradient(135deg, #e6f0fa 0%, #d4e4f7 50%, #ffffff 100%); padding: 100px 0 70px; position: relative; overflow: hidden; }
+        .hero h1 { font-weight: 900; font-size: 3.5rem; background: linear-gradient(135deg, #0a58ca, #e74c3c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero .subhead { font-size: 1.3rem; color: #2c3e50; font-weight: 500; }
-        .hero .slogan {
-            color: #0a58ca;
-            font-weight: 700;
-            background: rgba(10,88,202,0.1);
-            padding: 10px 28px;
-            border-radius: 50px;
-            display: inline-block;
-            border: 1px solid rgba(10,88,202,0.15);
-        }
-        .hero-img {
-            border-radius: 32px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            transition: 0.5s;
-        }
+        .hero .slogan { color: #0a58ca; font-weight: 700; background: rgba(10,88,202,0.1); padding: 10px 28px; border-radius: 50px; display: inline-block; border: 1px solid rgba(10,88,202,0.15); }
+        .hero-img { border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); width: 100%; max-height: 400px; object-fit: cover; transition: 0.5s; }
         .hero-img:hover { transform: scale(1.02); }
-
-        /* ===== SECTIONS ===== */
-        .section-title {
-            font-weight: 900;
-            color: #0a58ca;
-            position: relative;
-            margin-bottom: 2.5rem;
-            font-size: 2.4rem;
-        }
-        .section-title::after {
-            content: '';
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, #0a58ca, #e74c3c);
-            position: absolute;
-            bottom: -14px;
-            right: 0;
-            border-radius: 4px;
-        }
-        .section-subtitle {
-            color: #e74c3c;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* ===== CARDS ===== */
-        .card {
-            border: none;
-            border-radius: 28px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.05);
-            transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            background: white;
-            overflow: hidden;
-            height: 100%;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(10,88,202,0.12);
-        }
-        .card img {
-            height: 220px;
-            object-fit: cover;
-            transition: 0.5s;
-        }
+        .section-title { font-weight: 900; color: #0a58ca; position: relative; margin-bottom: 2.5rem; font-size: 2.4rem; }
+        .section-title::after { content: ''; width: 70px; height: 4px; background: linear-gradient(90deg, #0a58ca, #e74c3c); position: absolute; bottom: -14px; right: 0; border-radius: 4px; }
+        .section-subtitle { color: #e74c3c; font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; }
+        .card { border: none; border-radius: 28px; box-shadow: 0 10px 35px rgba(0,0,0,0.05); transition: 0.4s; background: white; overflow: hidden; height: 100%; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(10,88,202,0.12); }
+        .card img { height: 220px; object-fit: cover; transition: 0.5s; }
         .card:hover img { transform: scale(1.05); }
         .card-title { font-weight: 800; color: #1a2634; font-size: 1.2rem; }
         .card-text { color: #4a5a6e; font-size: 0.95rem; line-height: 1.7; }
-        .card .badge-custom {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 5px 18px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            z-index: 5;
-        }
-
-        /* ===== DONATE BOX ===== */
-        .donate-box {
-            background: linear-gradient(145deg, #ffffff, #f2f8ff);
-            border-radius: 40px;
-            padding: 50px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-            border: 1px solid rgba(10,88,202,0.08);
-            position: relative;
-            overflow: hidden;
-        }
-        .pay-link {
-            background: linear-gradient(135deg, #0a58ca, #084298);
-            color: white !important;
-            padding: 16px 42px;
-            border-radius: 60px;
-            font-weight: 700;
-            display: inline-block;
-            transition: 0.3s;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(10,88,202,0.3);
-        }
-        .pay-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(10,88,202,0.4);
-            color: white !important;
-        }
-
-        /* ============================================================
-           ADMIN PANEL - منظم و حرفه‌ای
-           ============================================================ */
+        .card .badge-custom { position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 5px 18px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; z-index: 5; }
+        .donate-box { background: linear-gradient(145deg, #ffffff, #f2f8ff); border-radius: 40px; padding: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid rgba(10,88,202,0.08); }
+        .pay-link { background: linear-gradient(135deg, #0a58ca, #084298); color: white !important; padding: 16px 42px; border-radius: 60px; font-weight: 700; display: inline-block; transition: 0.3s; text-decoration: none; box-shadow: 0 8px 25px rgba(10,88,202,0.3); }
+        .pay-link:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(10,88,202,0.4); color: white !important; }
         
-        /* دکمه باز کردن پنل */
-        .admin-toggle {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            z-index: 999;
-            background: linear-gradient(135deg, #2c3e50, #1a2634);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .admin-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-        }
-        .admin-toggle .badge-notif {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #e74c3c;
-            color: white;
-            font-size: 0.6rem;
-            padding: 3px 8px;
-            border-radius: 50%;
-        }
-        
-        /* پنل اصلی */
-        .admin-panel {
-            position: fixed;
-            bottom: 100px;
-            left: 25px;
-            z-index: 998;
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            width: 450px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            display: none;
-            border: 1px solid rgba(0,0,0,0.06);
-        }
+        .admin-toggle { position: fixed; bottom: 25px; left: 25px; z-index: 999; background: linear-gradient(135deg, #2c3e50, #1a2634); color: white; border: none; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.25); transition: 0.3s; cursor: pointer; }
+        .admin-toggle:hover { transform: scale(1.1); }
+        .admin-panel { position: fixed; bottom: 100px; left: 25px; z-index: 998; background: white; border-radius: 24px; padding: 30px; width: 450px; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); display: none; border: 1px solid rgba(0,0,0,0.06); }
         .admin-panel.show { display: block; }
-        .admin-panel::-webkit-scrollbar { width: 6px; }
-        .admin-panel::-webkit-scrollbar-thumb { background: #0a58ca; border-radius: 10px; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid #e9eef3; margin-bottom: 20px; }
+        .admin-header h5 { font-weight: 800; color: #1a2634; margin: 0; }
+        .admin-header .close-btn { background: none; border: none; font-size: 1.5rem; color: #999; cursor: pointer; transition: 0.3s; }
+        .admin-header .close-btn:hover { color: #e74c3c; }
+        .admin-form { background: #f8fcff; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px dashed #0a58ca; }
+        .admin-form .form-control { border-radius: 14px; padding: 12px 16px; border: 2px solid #e9eef3; transition: 0.3s; }
+        .admin-form .form-control:focus { border-color: #0a58ca; box-shadow: 0 0 0 4px rgba(10,88,202,0.1); }
+        .admin-item { background: #f8fcff; border-radius: 14px; padding: 12px 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border-right: 4px solid #0a58ca; }
+        .admin-item .item-info strong { font-size: 0.95rem; }
+        .admin-item .item-info small { display: block; color: #7f8c8d; font-size: 0.75rem; }
+        .admin-item .btn-sm { border-radius: 30px; padding: 4px 12px; font-size: 0.7rem; }
         
-        /* هدر پنل */
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e9eef3;
-            margin-bottom: 20px;
-        }
-        .admin-header h5 {
-            font-weight: 800;
-            color: #1a2634;
-            margin: 0;
-        }
-        .admin-header h5 i { color: #0a58ca; }
-        .admin-header .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .admin-header .close-btn:hover { color: #e74c3c; transform: rotate(90deg); }
-        
-        /* فرم افزودن */
-        .admin-form {
-            background: #f8fcff;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px dashed #0a58ca;
-        }
-        .admin-form .form-control {
-            border-radius: 14px;
-            padding: 12px 16px;
-            border: 2px solid #e9eef3;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-        .admin-form .form-control:focus {
-            border-color: #0a58ca;
-            box-shadow: 0 0 0 4px rgba(10,88,202,0.1);
-        }
-        .admin-form .form-label {
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: #1a2634;
-        }
-        
-        /* لیست فعالیت‌ها */
-        .admin-list-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .admin-list-header h6 {
-            font-weight: 700;
-            color: #1a2634;
-            margin: 0;
-        }
-        .admin-list-header .count-badge {
-            background: #0a58ca;
-            color: white;
-            padding: 2px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .admin-item {
-            background: #f8fcff;
-            border-radius: 14px;
-            padding: 12px 16px;
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-right: 4px solid #0a58ca;
-            transition: 0.3s;
-        }
-        .admin-item:hover { background: #e6f0fa; }
-        .admin-item .item-info strong { font-size: 0.95rem; color: #1a2634; }
-        .admin-item .item-info small {
-            display: block;
-            color: #7f8c8d;
-            font-size: 0.75rem;
-        }
-        .admin-item .item-actions {
-            display: flex;
-            gap: 6px;
-        }
-        .admin-item .item-actions .btn-sm {
-            border-radius: 30px;
-            padding: 4px 12px;
-            font-size: 0.7rem;
-        }
-        .admin-item .item-actions .btn-edit {
-            background: #ffc107;
-            color: #1a2634;
-            border: none;
-        }
-        .admin-item .item-actions .btn-edit:hover { background: #e0a800; }
-        .admin-item .item-actions .btn-del {
-            background: #e74c3c;
-            color: white;
-            border: none;
-        }
-        .admin-item .item-actions .btn-del:hover { background: #c0392b; }
-        
-        .admin-empty {
-            text-align: center;
-            color: #999;
-            padding: 30px 0;
-        }
-        .admin-empty i { font-size: 2.5rem; color: #dce7f2; margin-bottom: 10px; }
-
-        /* ===== LOGIN OVERLAY ===== */
-        .login-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
+        .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 1000; display: none; align-items: center; justify-content: center; }
         .login-overlay.show { display: flex; }
-        .login-box {
-            background: white;
-            border-radius: 32px;
-            padding: 45px;
-            width: 400px;
-            max-width: 92%;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-        .login-box .login-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #0a58ca, #084298);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
+        .login-box { background: white; border-radius: 32px; padding: 45px; width: 400px; max-width: 92%; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; }
+        .login-box .login-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #0a58ca, #084298); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
         .login-box .login-icon i { font-size: 2.5rem; color: white; }
-        .login-box h4 { font-weight: 800; color: #1a2634; }
-        .login-box .form-control {
-            border-radius: 16px;
-            padding: 14px 18px;
-            border: 2px solid #e9eef3;
-            text-align: center;
-            font-size: 1.1rem;
-            letter-spacing: 4px;
-        }
-        .login-box .form-control:focus {
-            border-color: #0a58ca;
-            box-shadow: 0 0 0 4px rgba(10,88,202,0.1);
-        }
-        .login-error {
-            color: #e74c3c;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            display: none;
-        }
+        .login-box .form-control { border-radius: 16px; padding: 14px 18px; border: 2px solid #e9eef3; text-align: center; font-size: 1.1rem; }
+        .login-box .form-control:focus { border-color: #0a58ca; box-shadow: 0 0 0 4px rgba(10,88,202,0.1); }
+        .login-error { color: #e74c3c; font-size: 0.9rem; margin-top: 10px; display: none; }
         .login-error.show { display: block; }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: linear-gradient(135deg, #0a1a2b, #0d2137);
-            color: #cbd5e1;
-            padding: 50px 0 25px;
-        }
+        
+        .footer { background: linear-gradient(135deg, #0a1a2b, #0d2137); color: #cbd5e1; padding: 50px 0 25px; }
         .footer a { color: #90b4e6; text-decoration: none; transition: 0.3s; }
         .footer a:hover { color: white; }
-        .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: 0.3s;
-        }
-        .social-icon:hover {
-            background: #0a58ca;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* ===== LANGUAGE SWITCH ===== */
-        .lang-switch a {
-            color: #1a2634;
-            font-weight: 600;
-            padding: 4px 14px;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 0.9rem;
-        }
-        .lang-switch a.active {
-            background: #0a58ca;
-            color: white;
-        }
+        .social-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: center; color: white; transition: 0.3s; }
+        .social-icon:hover { background: #0a58ca; color: white; transform: translateY(-3px); }
+        
+        .lang-switch a { color: #1a2634; font-weight: 600; padding: 4px 14px; border-radius: 30px; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+        .lang-switch a.active { background: #0a58ca; color: white; }
         .lang-switch a:hover:not(.active) { background: #e6f0fa; }
         [lang="en"] { display: none; }
         .lang-en [lang="fa"] { display: none; }
         .lang-en [lang="en"] { display: block; }
-
-        /* ===== LOADING ===== */
-        .loading {
-            text-align: center;
-            padding: 60px;
-            color: #0a58ca;
-        }
+        
+        .loading { text-align: center; padding: 60px; color: #0a58ca; }
         .loading i { font-size: 3rem; margin-bottom: 15px; display: block; }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero .subhead { font-size: 1rem; }
-            .hero { padding: 60px 0 30px; }
-            .donate-box { padding: 25px; }
-            .admin-panel { 
-                width: 92%; 
-                left: 4%; 
-                bottom: 85px; 
-                padding: 20px;
-                max-height: 70vh;
-            }
-            .admin-toggle { width: 50px; height: 50px; font-size: 1.2rem; }
-            .login-box { padding: 30px; }
-            .admin-form { padding: 15px; }
-        }
         
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .animate-fade { animation: fadeInUp 0.6s ease forwards; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .pulse { animation: pulse 2s infinite; }
-        
-        /* ===== TOAST NOTIFICATION ===== */
-        .toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-        .toast-custom {
-            background: white;
-            border-radius: 16px;
-            padding: 16px 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-            animation: fadeInUp 0.3s ease;
-            border-right: 4px solid #27ae60;
-            min-width: 250px;
-        }
+        .toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; }
+        .toast-custom { background: white; border-radius: 16px; padding: 16px 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 12px; margin-bottom: 10px; animation: fadeInUp 0.3s ease; border-right: 4px solid #27ae60; min-width: 250px; }
         .toast-custom.error { border-right-color: #e74c3c; }
-        .toast-custom i { font-size: 1.2rem; }
         .toast-custom .toast-icon-success { color: #27ae60; }
         .toast-custom .toast-icon-error { color: #e74c3c; }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .hero { padding: 60px 0 30px; } .admin-panel { width: 92%; left: 4%; bottom: 85px; padding: 20px; } .admin-toggle { width: 50px; height: 50px; font-size: 1.2rem; } .login-box { padding: 30px; } }
     </style>
 </head>
 <body>
@@ -562,11 +99,7 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <i class="fas fa-hands-helping me-2"></i>
-            <span lang="fa">بنیاد خیریه امید نو</span>
-            <span lang="en">Omid-e-No Charity</span>
-        </a>
+        <a class="navbar-brand" href="#"><i class="fas fa-hands-helping me-2"></i><span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -582,10 +115,7 @@
                 <a href="#" class="active" id="lang-fa">فا</a>
                 <a href="#" id="lang-en">En</a>
             </div>
-            <a href="#donate" class="btn btn-primary ms-lg-3">
-                <span lang="fa">کمک کنید</span>
-                <span lang="en">Donate</span>
-            </a>
+            <a href="#donate" class="btn btn-primary ms-lg-3"><span lang="fa">کمک کنید</span><span lang="en">Donate</span></a>
         </div>
     </div>
 </nav>
@@ -594,31 +124,14 @@
 <section id="home" class="hero">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6 animate-fade">
-                <span class="slogan mb-3">
-                    <i class="fas fa-heart me-2" style="color:#e74c3c;"></i>
-                    <span lang="fa">با هم برای آینده‌ای بهتر</span>
-                    <span lang="en">Together for a better future</span>
-                </span>
-                <h1 class="mt-3">
-                    <span lang="fa">بنیاد خیریه امید نو</span>
-                    <span lang="en">Omid-e-No Charity Foundation</span>
-                </h1>
-                <p class="subhead mt-3">
-                    <span lang="fa">نور امید در دل خانواده‌های نیازمند</span>
-                    <span lang="en">Bringing hope to families in need</span>
-                </p>
-                <p class="text-secondary" style="font-size:1.05rem;">
-                    <span lang="fa">با حمایت شما، زندگی‌ها را تغییر می‌دهیم. توزیع غذا، آموزش کودکان، کمک‌های بهداشتی و توانمندسازی خانواده‌ها.</span>
-                    <span lang="en">With your support, we change lives. Food distribution, children's education, health aid, and family empowerment.</span>
-                </p>
-                <a href="#donate" class="btn btn-primary btn-lg mt-3">
-                    <i class="fas fa-hand-holding-heart me-2"></i>
-                    <span lang="fa">همین حالا کمک کنید</span>
-                    <span lang="en">Donate Now</span>
-                </a>
+            <div class="col-lg-6">
+                <span class="slogan mb-3"><i class="fas fa-heart me-2" style="color:#e74c3c;"></i><span lang="fa">با هم برای آینده‌ای بهتر</span><span lang="en">Together for a better future</span></span>
+                <h1 class="mt-3"><span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity Foundation</span></h1>
+                <p class="subhead mt-3"><span lang="fa">نور امید در دل خانواده‌های نیازمند</span><span lang="en">Bringing hope to families in need</span></p>
+                <p class="text-secondary" style="font-size:1.05rem;"><span lang="fa">با حمایت شما، زندگی‌ها را تغییر می‌دهیم. توزیع غذا، آموزش کودکان، کمک‌های بهداشتی و توانمندسازی خانواده‌ها.</span><span lang="en">With your support, we change lives.</span></p>
+                <a href="#donate" class="btn btn-primary btn-lg mt-3"><i class="fas fa-hand-holding-heart me-2"></i><span lang="fa">همین حالا کمک کنید</span><span lang="en">Donate Now</span></a>
             </div>
-            <div class="col-lg-6 animate-fade delay-2">
+            <div class="col-lg-6">
                 <img src="https://scontent.fhea1-1.fna.fbcdn.net/v/t39.30808-6/472993420_122189775422088587_1900565217227070929_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1153&ctp=s2048x1153&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=46say-2hiVAQ7kNvwGTmXij&_nc_oc=Adp9VsGb7vDcLZjTP2dQIqlHIyMby0qFF5dyVblkgP92ZJWCTBjICtwTgwGVE7PQAH0&_nc_zt=23&_nc_ht=scontent.fhea1-1.fna&_nc_gid=tCW-bdWBjIpDBfaTtHHHUg&_nc_ss=7b2a8&oh=00_AQExEseeO5_QMJfNb_JFepdtkp3-2jBwsUdhK2Sb3XblwA&oe=6A778591" alt="Charity activity" class="hero-img">
             </div>
         </div>
@@ -630,26 +143,16 @@
     <div class="container">
         <div class="text-center mb-5">
             <span class="section-subtitle"><span lang="fa">درباره ما</span><span lang="en">About Us</span></span>
-            <h2 class="section-title text-center" style="text-align:center !important;">
-                <span lang="fa">بنیاد خیریه امید نو</span>
-                <span lang="en">Omid-e-No Charity Foundation</span>
-            </h2>
-            <p class="text-secondary" style="max-width:700px;margin:0 auto;font-size:1.05rem;">
-                <span lang="fa">با هدف کاهش فقر و توانمندسازی خانواده‌های آسیب‌پذیر در ولایت غور</span>
-                <span lang="en">Aiming to reduce poverty and empower vulnerable families in Ghor Province</span>
-            </p>
+            <h2 class="section-title text-center" style="text-align:center !important;"><span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity Foundation</span></h2>
         </div>
         <div class="row g-4">
             <div class="col-lg-8">
-                <p style="font-size:1.1rem;line-height:1.9;">
-                    <span lang="fa"><strong>بنیاد خیریه امید نو</strong> در سال ۱۳۹۵ با هدف کمک به خانواده‌های نیازمند و کودکان بی‌سرپرست در ولایت غور تأسیس شد. ما با تکیه بر کمک‌های مردمی، برنامه‌های متنوعی را در زمینه‌های <strong>توزیع مواد غذایی، آموزش، بهداشت و توانمندسازی</strong> اجرا می‌کنیم.</span>
-                    <span lang="en"><strong>Omid-e-No Charity Foundation</strong> was established in 2016 with the aim of helping needy families and orphaned children in Ghor Province. Relying on public donations, we implement various programs in <strong>food distribution, education, health, and empowerment</strong>.</span>
-                </p>
+                <p style="font-size:1.1rem;line-height:1.9;"><span lang="fa"><strong>بنیاد خیریه امید نو</strong> در سال ۱۳۹۵ با هدف کمک به خانواده‌های نیازمند و کودکان بی‌سرپرست در ولایت غور تأسیس شد. ما با تکیه بر کمک‌های مردمی، برنامه‌های متنوعی را در زمینه‌های <strong>توزیع مواد غذایی، آموزش، بهداشت و توانمندسازی</strong> اجرا می‌کنیم.</span><span lang="en"><strong>Omid-e-No Charity Foundation</strong> was established in 2016 with the aim of helping needy families and orphaned children in Ghor Province.</span></p>
                 <ul class="list-unstyled mt-4">
                     <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>توزیع سبدهای غذایی</strong> – بیش از ۵۰۰ خانواده ماهانه</span><span lang="en"><strong>Food basket distribution</strong> – over 500 families monthly</span></li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>کورس‌های سوادآموزی</strong> – آموزش به ۳۰۰ کودک و نوجوان</span><span lang="en"><strong>Literacy courses</strong> – educating 300 children and teenagers</span></li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>کمک‌های بهداشتی</strong> – خدمات درمانی رایگان در مناطق محروم</span><span lang="en"><strong>Health aid</strong> – free medical services in underserved areas</span></li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>توانمندسازی خانواده‌ها</strong> – آموزش مهارت‌های شغلی و اشتغال‌زایی</span><span lang="en"><strong>Family empowerment</strong> – vocational training and job creation</span></li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>کورس‌های سوادآموزی</strong> – آموزش به ۳۰۰ کودک و نوجوان</span><span lang="en"><strong>Literacy courses</strong> – educating 300 children</span></li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>کمک‌های بهداشتی</strong> – خدمات درمانی رایگان در مناطق محروم</span><span lang="en"><strong>Health aid</strong> – free medical services</span></li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-3"></i> <span lang="fa"><strong>توانمندسازی خانواده‌ها</strong> – آموزش مهارت‌های شغلی و اشتغال‌زایی</span><span lang="en"><strong>Family empowerment</strong> – vocational training</span></li>
                 </ul>
             </div>
             <div class="col-lg-4">
@@ -672,14 +175,7 @@
     <div class="container">
         <div class="text-center mb-5">
             <span class="section-subtitle"><span lang="fa">فعالیت‌ها</span><span lang="en">Projects</span></span>
-            <h2 class="section-title text-center" style="text-align:center !important;">
-                <span lang="fa">فعالیت‌ها و کمپاین‌های ما</span>
-                <span lang="en">Our Projects &amp; Campaigns</span>
-            </h2>
-            <p class="text-secondary" style="max-width:600px;margin:0 auto;">
-                <span lang="fa">با هم می‌توانیم زندگی‌ها را تغییر دهیم</span>
-                <span lang="en">Together we can change lives</span>
-            </p>
+            <h2 class="section-title text-center" style="text-align:center !important;"><span lang="fa">فعالیت‌ها و کمپاین‌های ما</span><span lang="en">Our Projects &amp; Campaigns</span></h2>
         </div>
         <div class="row mt-4 g-4" id="projectsContainer">
             <div class="loading"><i class="fas fa-spinner fa-spin"></i> در حال بارگذاری...</div>
@@ -694,27 +190,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <span class="section-subtitle"><span lang="fa">کمک مالی</span><span lang="en">Donate</span></span>
-                    <h2 class="section-title" style="margin-bottom:1.2rem;">
-                        <span lang="fa">با حمایت شما، آینده‌ای بهتر می‌سازیم</span>
-                        <span lang="en">With your support, we build a better future</span>
-                    </h2>
-                    <p style="font-size:1.1rem;line-height:1.9;">
-                        <span lang="fa">کمک‌های شما صرف <strong>تهیه سبدهای غذایی، لوازم آموزشی، پوشاک زمستانی</strong> و <strong>اجرای کورس‌های سوادآموزی</strong> برای کودکان و خانواده‌های آسیب‌پذیر در غور می‌شود. هر کمک، حتی کوچک، می‌تواند لبخند را به چهره یک کودک برگرداند.</span>
-                        <span lang="en">Your donations go toward <strong>food baskets, educational supplies, winter clothing</strong>, and <strong>literacy courses</strong> for vulnerable children and families in Ghor. Every donation, no matter how small, can bring a smile to a child's face.</span>
-                    </p>
-                    <a href="https://hesabpay.af/0780259955" target="_blank" class="pay-link mt-3">
-                        <i class="fas fa-credit-card me-2"></i>
-                        <span lang="fa">کمک مالی از طریق حساب پی</span>
-                        <span lang="en">Donate via HesabPay</span>
-                    </a>
+                    <h2 class="section-title" style="margin-bottom:1.2rem;"><span lang="fa">با حمایت شما، آینده‌ای بهتر می‌سازیم</span><span lang="en">With your support, we build a better future</span></h2>
+                    <p style="font-size:1.1rem;line-height:1.9;"><span lang="fa">کمک‌های شما صرف <strong>تهیه سبدهای غذایی، لوازم آموزشی، پوشاک زمستانی</strong> و <strong>اجرای کورس‌های سوادآموزی</strong> برای کودکان و خانواده‌های آسیب‌پذیر در غور می‌شود.</span><span lang="en">Your donations go toward <strong>food baskets, educational supplies, winter clothing</strong>, and <strong>literacy courses</strong> for vulnerable children.</span></p>
+                    <a href="https://hesabpay.af/0780259955" target="_blank" class="pay-link mt-3"><i class="fas fa-credit-card me-2"></i><span lang="fa">کمک مالی از طریق حساب پی</span><span lang="en">Donate via HesabPay</span></a>
                 </div>
                 <div class="col-lg-5 text-center">
                     <i class="fas fa-hand-holding-heart text-primary" style="font-size: 8rem; opacity: 0.12;"></i>
-                    <p class="mt-3 text-muted" style="font-size:1.1rem;">
-                        <span lang="fa">حساب پی:</span>
-                        <span lang="en">HesabPay:</span>
-                        <strong style="color:#0a58ca;font-size:1.4rem;display:block;">0780259955</strong>
-                    </p>
+                    <p class="mt-3 text-muted" style="font-size:1.1rem;"><span lang="fa">حساب پی:</span><span lang="en">HesabPay:</span> <strong style="color:#0a58ca;font-size:1.4rem;display:block;">0780259955</strong></p>
                 </div>
             </div>
         </div>
@@ -726,59 +208,24 @@
     <div class="container">
         <div class="text-center mb-5">
             <span class="section-subtitle"><span lang="fa">تماس با ما</span><span lang="en">Contact Us</span></span>
-            <h2 class="section-title text-center" style="text-align:center !important;">
-                <span lang="fa">با ما در ارتباط باشید</span>
-                <span lang="en">Get in Touch</span>
-            </h2>
+            <h2 class="section-title text-center" style="text-align:center !important;"><span lang="fa">با ما در ارتباط باشید</span><span lang="en">Get in Touch</span></h2>
         </div>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="d-flex flex-column gap-3">
-                    <div class="p-3 bg-light rounded-4">
-                        <i class="fas fa-envelope text-primary fa-fw me-2"></i> anwary@asia.com
-                    </div>
-                    <div class="p-3 bg-light rounded-4">
-                        <i class="fas fa-phone-alt text-primary fa-fw me-2"></i> +93797877773
-                    </div>
-                    <div class="p-3 bg-light rounded-4">
-                        <i class="fas fa-map-marker-alt text-primary fa-fw me-2"></i>
-                        <span lang="fa">ولایت غور، افغانستان</span>
-                        <span lang="en">Ghor Province, Afghanistan</span>
-                    </div>
-                    <div class="p-3 bg-light rounded-4">
-                        <i class="fas fa-clock text-primary fa-fw me-2"></i>
-                        <span lang="fa">شنبه تا پنج‌شنبه – ۸ صبح تا ۴ بعدازظهر</span>
-                        <span lang="en">Sat–Thu – 8 AM to 4 PM</span>
-                    </div>
+                    <div class="p-3 bg-light rounded-4"><i class="fas fa-envelope text-primary fa-fw me-2"></i> anwary@asia.com</div>
+                    <div class="p-3 bg-light rounded-4"><i class="fas fa-phone-alt text-primary fa-fw me-2"></i> +93797877773</div>
+                    <div class="p-3 bg-light rounded-4"><i class="fas fa-map-marker-alt text-primary fa-fw me-2"></i> <span lang="fa">ولایت غور، افغانستان</span><span lang="en">Ghor Province, Afghanistan</span></div>
                     <hr>
-                    <p class="text-secondary">
-                        <span lang="fa">برای همکاری، پیشنهادات یا سوالات، با ما تماس بگیرید.</span>
-                        <span lang="en">For collaboration, suggestions, or questions, contact us.</span>
-                    </p>
+                    <p class="text-secondary"><span lang="fa">برای همکاری، پیشنهادات یا سوالات، با ما تماس بگیرید.</span><span lang="en">For collaboration, suggestions, or questions, contact us.</span></p>
                 </div>
             </div>
             <div class="col-md-6">
-                <form class="contact-form" onsubmit="event.preventDefault(); showToast('پیام شما با موفقیت ارسال شد!', 'success');">
-                    <div class="mb-3">
-                        <label class="form-label fw-bold"><span lang="fa">نام کامل</span><span lang="en">Full Name</span></label>
-                        <input type="text" class="form-control" placeholder="نام شما / Your name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-bold"><span lang="fa">ایمیل</span><span lang="en">Email</span></label>
-                        <input type="email" class="form-control" placeholder="ایمیل شما / Your email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-bold"><span lang="fa">موضوع</span><span lang="en">Subject</span></label>
-                        <input type="text" class="form-control" placeholder="موضوع / Subject">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-bold"><span lang="fa">پیام</span><span lang="en">Message</span></label>
-                        <textarea class="form-control" rows="4" placeholder="پیام شما / Your message..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <span lang="fa">ارسال پیام</span>
-                        <span lang="en">Send Message</span>
-                    </button>
+                <form onsubmit="event.preventDefault(); showToast('پیام شما با موفقیت ارسال شد!', 'success');">
+                    <div class="mb-3"><label class="form-label fw-bold"><span lang="fa">نام کامل</span><span lang="en">Full Name</span></label><input type="text" class="form-control" placeholder="نام شما / Your name" required></div>
+                    <div class="mb-3"><label class="form-label fw-bold"><span lang="fa">ایمیل</span><span lang="en">Email</span></label><input type="email" class="form-control" placeholder="ایمیل شما / Your email" required></div>
+                    <div class="mb-3"><label class="form-label fw-bold"><span lang="fa">پیام</span><span lang="en">Message</span></label><textarea class="form-control" rows="4" placeholder="پیام شما / Your message..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary"><span lang="fa">ارسال پیام</span><span lang="en">Send Message</span></button>
                 </form>
             </div>
         </div>
@@ -790,15 +237,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h5 class="text-white fw-bold">
-                    <i class="fas fa-hands-helping me-2" style="color:#e74c3c;"></i>
-                    <span lang="fa">بنیاد خیریه امید نو</span>
-                    <span lang="en">Omid-e-No Charity</span>
-                </h5>
-                <p class="text-secondary" style="font-size:0.9rem;">
-                    <span lang="fa">نور امید در دل خانواده‌های نیازمند</span>
-                    <span lang="en">Bringing hope to families in need</span>
-                </p>
+                <h5 class="text-white fw-bold"><i class="fas fa-hands-helping me-2" style="color:#e74c3c;"></i><span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity</span></h5>
+                <p class="text-secondary" style="font-size:0.9rem;"><span lang="fa">نور امید در دل خانواده‌های نیازمند</span><span lang="en">Bringing hope to families in need</span></p>
                 <div class="d-flex gap-3 mt-3 flex-wrap">
                     <a href="https://hesabpay.af/0780259955" target="_blank" class="text-white"><i class="fas fa-hand-holding-heart me-1"></i> Pay: 0780259955</a>
                     <a href="mailto:anwary@asia.com" class="text-white"><i class="fas fa-envelope me-1"></i> anwary@asia.com</a>
@@ -806,9 +246,7 @@
                 </div>
             </div>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                <p class="text-secondary" style="font-size:0.85rem;">
-                    © ۲۰۲۶ – <span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity</span>
-                </p>
+                <p class="text-secondary" style="font-size:0.85rem;">© ۲۰۲۶ – <span lang="fa">بنیاد خیریه امید نو</span><span lang="en">Omid-e-No Charity</span></p>
                 <div>
                     <a href="https://www.facebook.com/profile.php?id=61552657621170" target="_blank" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.youtube.com/@OncfAfg" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
@@ -816,46 +254,33 @@
             </div>
         </div>
         <div class="border-top mt-4 pt-3 text-center text-secondary" style="font-size:0.85rem;border-color:rgba(255,255,255,0.06) !important;">
-            <i class="fas fa-location-dot me-1"></i>
-            <span lang="fa">ولایت غور، افغانستان</span>
-            <span lang="en">Ghor Province, Afghanistan</span>
+            <i class="fas fa-location-dot me-1"></i> <span lang="fa">ولایت غور، افغانستان</span><span lang="en">Ghor Province, Afghanistan</span>
         </div>
     </div>
 </footer>
 
 <!-- ===== ADMIN TOGGLE ===== -->
-<button class="admin-toggle" id="adminToggle" title="پنل مدیریت">
-    <i class="fas fa-cog"></i>
-</button>
+<button class="admin-toggle" id="adminToggle" title="پنل مدیریت"><i class="fas fa-cog"></i></button>
 
 <!-- ===== LOGIN OVERLAY ===== -->
 <div class="login-overlay" id="loginOverlay">
     <div class="login-box">
-        <div class="login-icon">
-            <i class="fas fa-lock"></i>
-        </div>
+        <div class="login-icon"><i class="fas fa-lock"></i></div>
         <h4><span lang="fa">پنل مدیریت</span><span lang="en">Admin Panel</span></h4>
         <p class="text-muted"><span lang="fa">رمز عبور را وارد کنید</span><span lang="en">Enter the password</span></p>
         <input type="password" class="form-control" id="adminPassword" placeholder="••••••" onkeydown="if(event.key==='Enter') loginAdmin()">
         <div class="login-error" id="loginError"><span lang="fa">رمز عبور اشتباه است!</span><span lang="en">Wrong password!</span></div>
-        <button class="btn btn-primary w-100 mt-3" onclick="loginAdmin()">
-            <span lang="fa">ورود</span><span lang="en">Login</span>
-        </button>
-        <button class="btn btn-link text-muted mt-2" onclick="closeLogin()">
-            <span lang="fa">بستن</span><span lang="en">Close</span>
-        </button>
+        <button class="btn btn-primary w-100 mt-3" onclick="loginAdmin()"><span lang="fa">ورود</span><span lang="en">Login</span></button>
+        <button class="btn btn-link text-muted mt-2" onclick="closeLogin()"><span lang="fa">بستن</span><span lang="en">Close</span></button>
     </div>
 </div>
 
 <!-- ===== ADMIN PANEL ===== -->
 <div class="admin-panel" id="adminPanel">
-    <!-- Header -->
     <div class="admin-header">
         <h5><i class="fas fa-cog me-2"></i> <span lang="fa">پنل مدیریت</span><span lang="en">Admin Panel</span></h5>
         <button class="close-btn" id="closeAdmin">✕</button>
     </div>
-
-    <!-- Add Form -->
     <div class="admin-form">
         <h6 class="fw-bold mb-3"><i class="fas fa-plus-circle text-success me-2"></i> <span lang="fa">افزودن فعالیت جدید</span><span lang="en">Add New Project</span></h6>
         <div class="mb-2">
@@ -865,42 +290,32 @@
             <textarea id="newDescEn" class="form-control mb-2" rows="2" placeholder="توضیح انگلیسی / English Description"></textarea>
             <input type="text" id="newImage" class="form-control mb-2" placeholder="لینک تصویر / Image URL (اختیاری)">
         </div>
-        <button class="btn btn-success btn-sm w-100" onclick="addProject()">
-            <i class="fas fa-plus me-2"></i> <span lang="fa">افزودن فعالیت</span><span lang="en">Add Project</span>
-        </button>
+        <button class="btn btn-success btn-sm w-100" onclick="addProject()"><i class="fas fa-plus me-2"></i> <span lang="fa">افزودن فعالیت</span><span lang="en">Add Project</span></button>
     </div>
-
-    <!-- Projects List -->
-    <div class="admin-list-header">
-        <h6><i class="fas fa-list me-2"></i> <span lang="fa">لیست فعالیت‌ها</span><span lang="en">Projects List</span></h6>
-        <span class="count-badge" id="projectCount">0</span>
-    </div>
-    <div id="adminProjectList">
-        <div class="admin-empty">
-            <i class="fas fa-inbox"></i>
-            <p><span lang="fa">هیچ فعالیتی وجود ندارد</span><span lang="en">No projects yet</span></p>
-        </div>
-    </div>
+    <h6 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> <span lang="fa">لیست فعالیت‌ها</span><span lang="en">Projects List</span> <span class="badge bg-primary" id="projectCount">0</span></h6>
+    <div id="adminProjectList"></div>
 </div>
 
-<!-- ===== TOAST CONTAINER ===== -->
+<!-- ===== TOAST ===== -->
 <div class="toast-container" id="toastContainer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // ============================================================
-    // CONFIGURATION - تنظیمات شما
+    // 🔧 تنظیمات شما 
     // ============================================================
     const ADMIN_PASSWORD = 'anwari.oncf';
-    const GITHUB_REPO = 'anwary-dev/website-data';
-    const GITHUB_ISSUE_NUMBER = 1;
-    const GITHUB_TOKEN = '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';
+    
+    // ✅ این مقادیر با اطلاعات JSONBin شما پر شده است
+    const JSONBIN_BIN_ID = '6a74091df5f4af5e29f12033';
+    const JSONBIN_API_KEY = '$2a$10$LDGwsvoh/Zkhal4fBb6FL.GCulANS4YIaSH04ZXBBMzonB2lyermu';
 
     // ============================================================
     // DATA
     // ============================================================
     let projects = [];
     let isLoggedIn = false;
+    let isLoading = false;
 
     // ============================================================
     // DEFAULT PROJECTS
@@ -919,7 +334,7 @@
             titleFa: 'کورس سواد آموزی',
             titleEn: 'Literacy Course',
             descFa: 'آموزش سواد و کورس‌های انگیزشی برای بیش از ۲۰۰ کودک یتیم و کاریگر.',
-            descEn: 'Literacy education and motivational courses for more than 200 orphaned and working children.',
+            descEn: 'Literacy education and motivational courses for more than 200 orphaned children.',
             image: 'https://scontent.fhea1-1.fna.fbcdn.net/v/t39.30808-6/475357569_122193085370088587_7680279762648715609_n.jpg?stp=dst-jpg_tt6&cstp=mx1667x933&ctp=s1667x933&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ddSRQDcGPWEQ7kNvwEkiQ_g&_nc_oc=AdriIC6SM-hK3PY96g3h0iz42yyZXZ9ZjC1eFPwBLUjWehHW0qulG5z_yGfX4HI2qr0&_nc_zt=23&_nc_ht=scontent.fhea1-1.fna&_nc_gid=hwdwSXu3gT9iW11qc-yvdA&_nc_ss=7b2a8&oh=00_AQFuyeRa9ypVK6yDBXc---jZ2NKFa45XMUY_CRhq8dz9ig&oe=6A777BA1'
         },
         {
@@ -927,130 +342,96 @@
             titleFa: 'توزیع ۱۰۰ کیت آموزشی برای کودکان مهاجر',
             titleEn: '100 Educational Kits for Migrant Children',
             descFa: 'توزیع ۱۰۰ جلد کتاب، کتابچه و لوازم تحریر برای کودکان مهاجر.',
-            descEn: 'Distributing 100 books, notebooks & stationery to Afghan migrant children.',
+            descEn: 'Distributing 100 books, notebooks & stationery to migrant children.',
             image: 'https://scontent.fhea1-1.fna.fbcdn.net/v/t39.30808-6/475438891_122193124352088587_4338739677066752587_n.jpg?stp=dst-jpg_tt6&cstp=mx1668x945&ctp=s1668x945&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=g4a7KfoOu2oQ7kNvwHVkIhX&_nc_oc=AdqTCkMZx3Nd1ikmhwE-w38EdecA5FPqGRn6E62NHXOy2WQuzpQEO0_ObxJ5cNo7QRE&_nc_zt=23&_nc_ht=scontent.fhea1-1.fna&_nc_gid=Pg7chTEXq6mPGcMGbMbScg&_nc_ss=7b2a8&oh=00_AQHZScKwrFwUY8L0HBWiZqz_hsWSdR6uICJC3fGG_Rk3og&oe=6A7782A2'
         }
     ];
 
     // ============================================================
-    // TOAST NOTIFICATION
+    // TOAST
     // ============================================================
     function showToast(message, type = 'success') {
         const container = document.getElementById('toastContainer');
         const toast = document.createElement('div');
         toast.className = `toast-custom ${type === 'error' ? 'error' : ''}`;
         const icon = type === 'success' ? 'fa-check-circle toast-icon-success' : 'fa-exclamation-circle toast-icon-error';
-        toast.innerHTML = `
-            <i class="fas ${icon}"></i>
-            <span>${message}</span>
-        `;
+        toast.innerHTML = `<i class="fas ${icon}"></i><span>${message}</span>`;
         container.appendChild(toast);
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateY(-20px)';
-            setTimeout(() => toast.remove(), 300);
-        }, 3000);
+        setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3000);
     }
 
     // ============================================================
-    // LOAD FROM GITHUB
+    // LOAD FROM JSONBIN
     // ============================================================
-    async function loadFromGitHub() {
+    async function loadFromJSONBin() {
+        if (isLoading) return;
+        isLoading = true;
+        
         try {
-            const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${GITHUB_ISSUE_NUMBER}/comments?t=${Date.now()}`;
+            const url = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`;
             const response = await fetch(url, {
                 headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
+                    'X-Master-Key': JSONBIN_API_KEY
                 }
             });
             
-            if (!response.ok) throw new Error('Network error');
-            const comments = await response.json();
-            
-            for (const comment of comments) {
-                if (comment.body && comment.body.startsWith('{"projects":')) {
-                    const data = JSON.parse(comment.body);
-                    if (data.projects && data.projects.length > 0) {
-                        return data.projects;
-                    }
-                }
+            if (!response.ok) {
+                throw new Error('Network error: ' + response.status);
             }
-            return null;
+            
+            const data = await response.json();
+            if (data.record && data.record.projects && data.record.projects.length > 0) {
+                projects = data.record.projects;
+                return true;
+            }
+            return false;
         } catch (error) {
-            console.log('Error loading from GitHub:', error);
-            return null;
+            console.log('Error loading from JSONBin:', error);
+            return false;
+        } finally {
+            isLoading = false;
         }
     }
 
     // ============================================================
-    // SAVE TO GITHUB
+    // SAVE TO JSONBIN
     // ============================================================
-    async function saveToGitHub(projectsData) {
+    async function saveToJSONBin() {
         try {
-            const url = `https://api.github.com/repos/${GITHUB_REPO}/issues/${GITHUB_ISSUE_NUMBER}/comments`;
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Failed to fetch comments');
+            const url = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': JSONBIN_API_KEY
+                },
+                body: JSON.stringify({ projects: projects })
+            });
             
-            const comments = await response.json();
-            const data = JSON.stringify({ projects: projectsData, updated: new Date().toISOString() });
-            
-            let commentId = null;
-            for (const comment of comments) {
-                if (comment.body && comment.body.startsWith('{"projects":')) {
-                    commentId = comment.id;
-                    break;
-                }
+            if (!response.ok) {
+                throw new Error('Network error: ' + response.status);
             }
             
-            if (commentId) {
-                const updateUrl = `https://api.github.com/repos/${GITHUB_REPO}/issues/comments/${commentId}`;
-                const updateResponse = await fetch(updateUrl, {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `token ${GITHUB_TOKEN}`
-                    },
-                    body: JSON.stringify({ body: data })
-                });
-                if (!updateResponse.ok) throw new Error('Failed to update');
-            } else {
-                const createResponse = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `token ${GITHUB_TOKEN}`
-                    },
-                    body: JSON.stringify({ body: data })
-                });
-                if (!createResponse.ok) throw new Error('Failed to create');
-            }
             return true;
         } catch (error) {
-            console.log('Error saving to GitHub:', error);
-            localStorage.setItem('omidNoProjects', JSON.stringify(projectsData));
+            console.log('Error saving to JSONBin:', error);
             return false;
         }
     }
 
     // ============================================================
-    // RENDER PROJECTS (Public)
+    // RENDER PROJECTS
     // ============================================================
     function renderProjects() {
         const container = document.getElementById('projectsContainer');
-        if (!container) return;
         container.innerHTML = '';
-        
         if (projects.length === 0) {
             container.innerHTML = '<div class="text-center text-muted py-5">هیچ فعالیتی یافت نشد / No projects found</div>';
             return;
         }
-        
         projects.forEach((p, index) => {
             const col = document.createElement('div');
-            col.className = 'col-md-4 animate-fade';
-            col.style.animationDelay = (index * 0.08) + 's';
+            col.className = 'col-md-4';
             col.innerHTML = `
                 <div class="card">
                     <div style="position:relative;overflow:hidden;">
@@ -1073,21 +454,14 @@
     function renderAdminList() {
         const list = document.getElementById('adminProjectList');
         const count = document.getElementById('projectCount');
-        if (!list) return;
         list.innerHTML = '';
+        count.textContent = projects.length;
         
         if (projects.length === 0) {
-            list.innerHTML = `
-                <div class="admin-empty">
-                    <i class="fas fa-inbox"></i>
-                    <p><span lang="fa">هیچ فعالیتی وجود ندارد</span><span lang="en">No projects yet</span></p>
-                </div>
-            `;
-            count.textContent = '0';
+            list.innerHTML = '<div class="text-center text-muted py-3">هیچ فعالیتی وجود ندارد</div>';
             return;
         }
         
-        count.textContent = projects.length;
         projects.forEach((p, index) => {
             const div = document.createElement('div');
             div.className = 'admin-item';
@@ -1096,10 +470,8 @@
                     <strong>${p.titleFa}</strong>
                     <small>${p.titleEn}</small>
                 </div>
-                <div class="item-actions">
-                    <button class="btn btn-sm btn-del" onclick="deleteProject(${index})" title="حذف / Delete">
-                        <i class="fas fa-trash"></i>
-                    </button>
+                <div>
+                    <button class="btn btn-sm btn-danger" onclick="deleteProject(${index})"><i class="fas fa-trash"></i></button>
                 </div>
             `;
             list.appendChild(div);
@@ -1111,7 +483,7 @@
     // ============================================================
     async function addProject() {
         if (!isLoggedIn) {
-            showToast('لطفاً ابتدا وارد پنل مدیریت شوید / Please login first', 'error');
+            showToast('لطفاً وارد پنل مدیریت شوید / Please login', 'error');
             return;
         }
         
@@ -1122,29 +494,27 @@
         const image = document.getElementById('newImage').value.trim();
 
         if (!titleFa || !titleEn || !descFa || !descEn) {
-            showToast('لطفاً همه فیلدها را پر کنید / Please fill all fields', 'error');
+            showToast('لطفاً همه فیلدها را پر کنید / Fill all fields', 'error');
             return;
         }
 
         const newProject = {
             id: Date.now(),
-            titleFa: titleFa,
-            titleEn: titleEn,
-            descFa: descFa,
-            descEn: descEn,
+            titleFa, titleEn, descFa, descEn,
             image: image || 'https://images.unsplash.com/photo-1593113630400-ea4288922497?w=600'
         };
 
         projects.push(newProject);
-        const saved = await saveToGitHub(projects);
-        if (!saved) {
-            localStorage.setItem('omidNoProjects', JSON.stringify(projects));
-        }
         
-        renderProjects();
-        renderAdminList();
-        clearForm();
-        showToast('فعالیت با موفقیت اضافه شد! / Project added successfully!');
+        const saved = await saveToJSONBin();
+        if (saved) {
+            renderProjects();
+            renderAdminList();
+            clearForm();
+            showToast('فعالیت با موفقیت اضافه شد! / Project added!');
+        } else {
+            showToast('خطا در ذخیره‌سازی! دوباره تلاش کنید / Save failed!', 'error');
+        }
     }
 
     // ============================================================
@@ -1152,19 +522,19 @@
     // ============================================================
     async function deleteProject(index) {
         if (!isLoggedIn) {
-            showToast('لطفاً ابتدا وارد پنل مدیریت شوید / Please login first', 'error');
+            showToast('لطفاً وارد پنل مدیریت شوید / Please login', 'error');
             return;
         }
-        
-        if (confirm('آیا از حذف این فعالیت مطمئن هستید؟ / Are you sure?')) {
+        if (confirm('آیا از حذف مطمئن هستید؟ / Are you sure?')) {
             projects.splice(index, 1);
-            const saved = await saveToGitHub(projects);
-            if (!saved) {
-                localStorage.setItem('omidNoProjects', JSON.stringify(projects));
+            const saved = await saveToJSONBin();
+            if (saved) {
+                renderProjects();
+                renderAdminList();
+                showToast('فعالیت حذف شد! / Project deleted!');
+            } else {
+                showToast('خطا در حذف! / Delete failed!', 'error');
             }
-            renderProjects();
-            renderAdminList();
-            showToast('فعالیت با موفقیت حذف شد! / Project deleted!');
         }
     }
 
@@ -1172,11 +542,9 @@
     // CLEAR FORM
     // ============================================================
     function clearForm() {
-        document.getElementById('newTitleFa').value = '';
-        document.getElementById('newTitleEn').value = '';
-        document.getElementById('newDescFa').value = '';
-        document.getElementById('newDescEn').value = '';
-        document.getElementById('newImage').value = '';
+        ['newTitleFa', 'newTitleEn', 'newDescFa', 'newDescEn', 'newImage'].forEach(id => {
+            document.getElementById(id).value = '';
+        });
     }
 
     // ============================================================
@@ -1184,18 +552,16 @@
     // ============================================================
     function loginAdmin() {
         const password = document.getElementById('adminPassword').value;
-        const errorEl = document.getElementById('loginError');
-        
         if (password === ADMIN_PASSWORD) {
             isLoggedIn = true;
             document.getElementById('loginOverlay').classList.remove('show');
             document.getElementById('adminPanel').classList.add('show');
             document.getElementById('adminPassword').value = '';
-            errorEl.classList.remove('show');
+            document.getElementById('loginError').classList.remove('show');
             renderAdminList();
-            showToast('به پنل مدیریت خوش آمدید! / Welcome to Admin Panel!');
+            showToast('به پنل مدیریت خوش آمدید!');
         } else {
-            errorEl.classList.add('show');
+            document.getElementById('loginError').classList.add('show');
             document.getElementById('adminPassword').value = '';
             document.getElementById('adminPassword').focus();
         }
@@ -1226,22 +592,18 @@
     // ============================================================
     // LANGUAGE SWITCHER
     // ============================================================
-    const langFa = document.getElementById('lang-fa');
-    const langEn = document.getElementById('lang-en');
-    const htmlEl = document.documentElement;
-
-    langFa.addEventListener('click', function(e) {
+    document.getElementById('lang-fa').addEventListener('click', function(e) {
         e.preventDefault();
-        htmlEl.classList.remove('lang-en');
-        langFa.classList.add('active');
-        langEn.classList.remove('active');
+        document.documentElement.classList.remove('lang-en');
+        this.classList.add('active');
+        document.getElementById('lang-en').classList.remove('active');
     });
 
-    langEn.addEventListener('click', function(e) {
+    document.getElementById('lang-en').addEventListener('click', function(e) {
         e.preventDefault();
-        htmlEl.classList.add('lang-en');
-        langEn.classList.add('active');
-        langFa.classList.remove('active');
+        document.documentElement.classList.add('lang-en');
+        this.classList.add('active');
+        document.getElementById('lang-fa').classList.remove('active');
     });
 
     // ============================================================
@@ -1254,9 +616,8 @@
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                const offset = 70;
-                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: top, behavior: 'smooth' });
+                const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
@@ -1268,18 +629,11 @@
         const container = document.getElementById('projectsContainer');
         container.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i>در حال بارگذاری...</div>';
         
-        let loadedData = await loadFromGitHub();
+        const loaded = await loadFromJSONBin();
         
-        if (loadedData && loadedData.length > 0) {
-            projects = loadedData;
-        } else {
-            const stored = localStorage.getItem('omidNoProjects');
-            if (stored) {
-                try { projects = JSON.parse(stored); } 
-                catch(e) { projects = [...defaultProjects]; }
-            } else {
-                projects = [...defaultProjects];
-            }
+        if (!loaded) {
+            projects = [...defaultProjects];
+            await saveToJSONBin();
         }
         
         renderProjects();
